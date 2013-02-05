@@ -4,7 +4,7 @@
 * Contem as definicoes padrao do sistema
 */
 header('Content-type: text/html; charset=utf-8');
-session_name('f1eab0a18e58e4702476283e44486c800fc');
+session_name('ljagdukgukegfvamhfgdka');
 session_start();
 ob_start();
 set_time_limit(2000);
