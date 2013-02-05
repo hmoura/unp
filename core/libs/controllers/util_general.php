@@ -297,13 +297,7 @@ function auth($op=FALSE, $redirect_to="")
 		default:// both
 			break;
 	}
-	if ($_SESSION) 
-	{
-		// checks for permissions
-		permission();
-		// checks if the system is open for this month
-		block_use();
-	}
+	
 	return $r;
 }
 

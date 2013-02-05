@@ -56,25 +56,11 @@ if ($count = count($command))
         case "logout":
             include DOCROOT."/app/views/session/logout.php";
             break;
-        case "db":
-            if (@$command[1] == 'migrate')
-            {
-                include DOCROOT."/core/db/migrate.php";
-            }
-            else if (@$command[1] == 'populate')
-            {
-                include DOCROOT."/core/db/populate.php";
-            }
-            else
-            {
-                include DOCROOT."/core/libs/views/404.php";
-            }
-            break;
         default:// default route settings
             $page = DOCROOT."/app/views";
             $command[1] = @$command[1] ? $command[1] : "index";// view
             $page .= "/".$command[0]."/".$command[1].".php";
-            $page = str_ireplace ( 'update' , 'add' , $page);
+            //$page = str_ireplace ( 'update' , 'add' , $page);
             $filename = substr($page, strripos($page, '/') + 1);
             
             if (file_exists($page) && strpos($filename, '_inc_') === false)

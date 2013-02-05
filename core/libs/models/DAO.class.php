@@ -46,23 +46,6 @@ class DAO extends DBUtil
 		if(mysql_query($this->sql))
 		{
 			$this->Return = mysql_insert_id();
-			
-			// salva no system_logs
-			if (get_class($obj) != 'System_log' && get_class($obj) != 'Permission')
-			{
-				$sql_log = "INSERT INTO system_logs VALUES(
-					null,
-					'".$_SESSION['user_id']."',
-					'".get_class($obj)."',
-					'".$this->Return."',
-					'create',
-					null, null, null,
-					'".injection($this->sql)."',
-					'".now()."', 
-					null, null
-				);";
-				mysql_query($sql_log) or die('erro: '. mysql_error());
-			}
 		}
 		else
 			$error = mysql_error();
@@ -150,19 +133,6 @@ class DAO extends DBUtil
 		if(mysql_query($this->sql))
 		{
 			$this->Return = TRUE;
-			// salva no system_logs
-			if (get_class($obj) != 'System_log')
-			{
-				$data = array(
-					'user_id' => $_SESSION['user_id'],
-					'class'   => get_class($obj),
-					'class_id' => $obj->id,
-					'operation' => 'delete',
-					'sql_string' => $this->sql
-				);
-				$log = new System_log($data);
-				$this->Create($log);
-			}
 		}
 		if ($debbug)
 		{
@@ -191,19 +161,6 @@ class DAO extends DBUtil
 			if(mysql_query($this->sql))
 			{
 				$this->Return = TRUE;
-				// salva no system_logs
-				/*if (get_class($obj) != 'System_log')
-				{
-					$data = array(
-						'user_id' => $_SESSION['user_id'],
-						'class'   => get_class($obj),
-						'class_id' => $obj->id,
-						'operation' => 'remove',
-						'sql_string' => $this->sql
-					);
-					$log = new System_log($data);
-					$this->Create($log);
-				}*/
 			}
 		}
 		if ($debbug)

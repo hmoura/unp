@@ -1,6 +1,6 @@
 <?php
 /* 
-Author: Ot‡vio Barbosa / Cicero Monteiro
+Author: Otavio Barbosa / Cicero Monteiro
 
 Description:
 	Defines the SQL strings that accesses the database
@@ -86,19 +86,6 @@ class DBUtil extends Inflector
 				if (($act_obj->get($arr_keys[$i]) != $obj->get($arr_keys[$i])) && !is_array($obj->get($arr_keys[$i])))
 				{
 					$str_params .= $str_params == "" ? " ".$arr_keys[$i]."='".injection($obj->get($arr_keys[$i]))."'" : ", ".$arr_keys[$i]."='".injection($obj->get($arr_keys[$i]))."'";
-					// grava no system_logs
-					$sql_log = "INSERT INTO system_logs VALUES(
-						null, 
-						'{$_SESSION['user_id']}', 
-						'".get_class($obj)."',
-						'".$obj->get('id')."',
-						'update',
-						'{$arr_keys[$i]}',
-						'".injection($act_obj->get($arr_keys[$i]))."',
-						'".injection($obj->get($arr_keys[$i]))."',
-						null, '".now()."', null, null
-					)";
-					mysql_query($sql_log);
 				}
 			}
 		}
