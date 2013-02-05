@@ -5,6 +5,8 @@
 */
 header('Content-type: text/html; charset=utf-8');
 session_name('ljagdukgukegfvamhfgdka');
+
+
 session_start();
 ob_start();
 set_time_limit(2000);
