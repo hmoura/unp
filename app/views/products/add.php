@@ -3,6 +3,7 @@
 	
     <head>
         <?php auth('yes')?>
+        
     	<title>PHP Orientado - UNP</title>
         <?php include(DOCROOT.'/app/views/public/_inc_head.php');?>
 
