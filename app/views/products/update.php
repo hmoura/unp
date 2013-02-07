@@ -100,7 +100,7 @@
                 });
             }
 
-            //$("#show_comments").hide();
+            $("#show_comments").hide();
             //$("#add_comment").hide();
 
             $("#show_comments_btn").click(function(e){
@@ -127,6 +127,7 @@
                 });
                 $("#titulo").val('');
                 $("#comentario").val('');
+                $("#show_comments").slideToggle();
 
             });
 
