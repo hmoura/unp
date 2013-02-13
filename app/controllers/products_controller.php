@@ -7,6 +7,7 @@ class Products_Controller extends App_Controller{
 		if ($_POST)
 		{
 			var_dump($_POST);
+			
 
 			// 1. criar array com dados
 			// $dados = array(
