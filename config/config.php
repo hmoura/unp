@@ -27,8 +27,8 @@ define('SYSTEM_NAME', 'Projeto Teste - UNP');
 // configuracao do banco de dados
 define('HOST', 'localhost');
 define('DATABASE', 'unp_oo');
-define('USERNAME', 'hsw');
-define('PASSWORD', 'hsw123');
+define('USERNAME', 'root');
+define('PASSWORD', '');
 
 
 define('DOCROOT', $DOCUMENT_ROOT);
