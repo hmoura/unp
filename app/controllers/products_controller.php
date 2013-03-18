@@ -4,6 +4,7 @@ class Products_Controller extends App_Controller{
 
 	function add()
 	{
+		
 		if ($_POST)
 		{
 			var_dump($_POST);
