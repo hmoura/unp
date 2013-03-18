@@ -18,7 +18,7 @@ if ($_POST)
     }
     else
     {
-        $MSG->error[] = 'Erro ao logar. Verifique os dados e tente novamente.';
+        $MSG->error[] = 'Erro ao logar. Verifique os dados e tente novamente..';
     }
 }
 ?>
