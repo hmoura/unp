@@ -1,6 +1,7 @@
 <?php
 if ($_POST)
 {
+
     global $MSG;
     $dados = array(
         'email' => $_POST['email'],
